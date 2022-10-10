@@ -28,11 +28,13 @@ app.use(session({
     saveUninitialized:true
 }));
 
-//8 - Invocamos el modulo de conexion de la BD
-const connection = require('./Log In/database/db.js');
 
+//8 - Invocamos el modulo de conexion de la BD
+const connection = require('./Log In/database/db');
+
+//9 - Estableciendo las rutas
 app.get('/', (req, res)=>{
-    res.send('HOLA MUNDO')
+    res.render('index')
 })
 
 app.listen(3307, (req, res)=>{
