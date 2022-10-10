@@ -15,7 +15,7 @@ app.use('/resources', express.static('public'));
 app.use('/resources', express.static(__dirname + '/public'));
 
 //5 - Establecemos el motor de plantilla ejs
-app.set('view wngine', 'ejs');
+app.set('view engine', 'ejs');
 
 //6 - Invocamos bcryptjs
 const bcryptjs = require('bcryptjs');
@@ -30,13 +30,13 @@ app.use(session({
 
 
 //8 - Invocamos el modulo de conexion de la BD
-const connection = require('./Log In/database/db');
+const connection = require('./database/db');
 
 //9 - Estableciendo las rutas
 app.get('/', (req, res)=>{
     res.render('index')
 })
 
-app.listen(3307, (req, res)=>{
-    console.log('EL SERVIDOR SE ESTA EJECUTANDO EN http://localhost:3307');
+app.listen(3309, (req, res)=>{
+    console.log('EL SERVIDOR SE ESTA EJECUTANDO EN http://localhost:3309');
 })
